@@ -20,6 +20,7 @@ export default {
             var option = {
                 title: {
                     text: "搜索鼠  22"
+          
                 },
                 tooltip: {},
                 legend: {
