@@ -22,7 +22,6 @@ export default {
 
                     text: "搜索鼠"
 
-          
                 },
                 tooltip: {},
                 legend: {
