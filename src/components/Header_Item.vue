@@ -15,13 +15,13 @@
           <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
               <li @click="add_class('1')" :class="{active:1==a_index}">
-                <router-link to="/store_warn">店铺预警</router-link>
+                <router-link to="/">店铺预警</router-link>
               </li>
               <li @click="add_class('2')" :class="{active:2==a_index}">
                 <router-link to="/traffic_control">流量把控</router-link>
               </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"  @click="add_class('3')" :class="{active:3==a_index}">
+              <li :class="{active:3==a_index}" class="dropdown" click="aa()">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   选品定价
                   <b class="caret"></b>
                 </a>
@@ -47,10 +47,10 @@
                   </li>
                 </ul>
               </li>
-              <li  @click="add_class('4')" :class="{active:4==a_index}">
+              <li @click="add_class('4')" :class="{active:4==a_index}">
                 <router-link to="/Locate">客群定位</router-link>
               </li>
-              <li  @click="add_class('5')" :class="{active:5==a_index}">
+              <li @click="add_class('5')" :class="{active:5==a_index}">
                 <router-link to="/echarts">搜索绩效</router-link>
               </li>
             </ul>
@@ -66,12 +66,15 @@
 export default {
     data() {
         return {
-          a_index: ''
+            a_index: ""
         };
+    },
+    mounted() {
+        this.a_index = sessionStorage.getItem("key");
     },
     methods: {
         add_class(index) {
-            this.a_index = index;
+            (this.a_index = index), sessionStorage.setItem("key", this.a_index);
         }
     }
 };

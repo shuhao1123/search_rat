@@ -9,6 +9,7 @@ import Locate from '@/components/Locate'
 
 Vue.use(Router)
 
+
 export default new Router({
     routes: [{
             path: '/navigation', //导航头
@@ -16,7 +17,7 @@ export default new Router({
             component: Header_Item
         },
         {
-            path: '/store_warn', //店铺警告
+            path: '/', //店铺警告
             name: 'zhaoshuhao',
             component: zhaoshuhao
         },
