@@ -20,7 +20,7 @@
               <li @click="add_class('2')" :class="{active:2==a_index}">
                 <router-link to="/traffic_control">流量把控</router-link>
               </li>
-              <li :class="{active:3==a_index}" class="dropdown" click="aa()">
+              <li :class="{active:3==a_index}" class="dropdown" click="function aa(){alert(22)}">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   选品定价
                   <b class="caret"></b>
