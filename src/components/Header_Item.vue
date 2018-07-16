@@ -20,8 +20,8 @@
               <li @click="add_class('2')" :class="{active:2==a_index}">
                 <router-link to="/traffic_control">流量把控</router-link>
               </li>
-              <li :class="{active:3==a_index}" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" @click="add_class('3')">
+              <li class="dropdown" :class="{active:3==a_index}">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   选品定价
                   <b class="caret"></b>
                 </a>
@@ -70,6 +70,27 @@ export default {
         };
     },
     mounted() {
+        // navbar 选品定价二级导航缓存
+        $(".dropdown").click(function() {
+            $(this)
+                .siblings()
+                .removeClass("active");
+            sessionStorage.setItem("key", 3);
+        });
+        // navbar 选品定价二级导航点击给父元素添加样式
+        $(".dropdown")
+            .find("ul li")
+            .click(function() {
+                $(".dropdown").addClass("active");
+            });
+        $(".dropdown")
+            .siblings()
+            .click(function() {
+                $(this)
+                    .addClass("active")
+                    .siblings()
+                    .removeClass("active");
+            });
         this.a_index = sessionStorage.getItem("key");
     },
     methods: {
