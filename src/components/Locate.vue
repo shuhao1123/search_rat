@@ -8,7 +8,7 @@
         <div id="box">
             <div v-for='(itemcon,index) in tabContents' :key='index' v-show="index==num">{{itemcon}}</div>
         </div>
-        <ee></ee>
+        <!-- <ee></ee> -->
     </div>
 </template>
 <script>

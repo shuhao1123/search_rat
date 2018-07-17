@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="echa" style="width:90%;height:500px;margin:20px auto"></div>
-        <p>{{totelNumber}}</p>
+        <!-- <p>{{totelNumber}}</p> -->
     </div>
 </template>
 <script>
@@ -19,7 +19,9 @@ export default {
             gp: [
                 ["2018/1/24", 2320.26, 2320.26, 2287.3, 2362.94],
                 ["2018/1/25", 2300, 2291.3, 2288.26, 2308.38]
-            ]
+            ],
+            timer:null,
+            timer2:null
         };
     },
     computed: {},
@@ -27,21 +29,29 @@ export default {
         //设置定时器，每3秒刷新一次
         // var len = this.totelNumber.length;
         var self = this;
-        setInterval(getTotelNumber, 1000);
+        this.timer=setInterval(getTotelNumber, 250);
         function getTotelNumber() {
             var newArray = [];
             for (var i = 0; i < 30; i++) {
                 newArray[i] = new Array();
-                for (var j = 1; j < 5; j++) {
-                    newArray[i][j] = Math.ceil(Math.random() * 5000) - 1;
+                for (var j = 0; j < 5; j++) {
+                    newArray[i][j] = Math.ceil(Math.random() * 200) + 2300;
                 }
-                newArray[i][0] = "2018/1/" + Number(i + 1);
+                newArray[i][0] = "2018/6/" + Number(i + 1);
+                newArray[i][1]=2400
+                // newArray[i][2]=2000
+                // newArray[i][0]=2400
             }
             self.totelNumber = newArray;
         }
         getTotelNumber();
         // this.drawline()
-        setInterval(this.drawline, 1000);
+      this.timer2=  setInterval(this.drawline, 250);
+    },
+   beforeDestroy (){
+clearInterval(this.timer)
+clearInterval(this.timer2)
+
     },
     methods: {
         drawline() {
@@ -82,7 +92,7 @@ export default {
             }
             var option = {
                 title: {
-                    text: "上证指数",
+                    text: "",
                     left: 0
                 },
                 tooltip: {
@@ -92,7 +102,7 @@ export default {
                     }
                 },
                 legend: {
-                    data: ["日K", "MA5", "MA10", "MA20", "MA30"]
+                    data: ["K", "MA5", "MA10", "MA20", "MA30"]
                 },
                 grid: {
                     left: "10%",
@@ -112,27 +122,29 @@ export default {
                 },
                 yAxis: {
                     scale: true,
+                    min: "2000",
+                    max: "3000",
                     splitArea: {
-                        show: true
+                        show: false
                     }
                 },
-                dataZoom: [
-                    {
-                        type: "inside",
-                        start: 50,
-                        end: 100
-                    },
-                    {
-                        show: true,
-                        type: "slider",
-                        y: "90%",
-                        start: 50,
-                        end: 100
-                    }
-                ],
+                // dataZoom: [
+                //     {
+                //         type: "inside",
+                //         start: 50,
+                //         end: 100
+                //     },
+                //     {
+                //         show: true,
+                //         type: "slider",
+                //         y: "90%",
+                //         start: 50,
+                //         end: 100
+                //     }
+                // ],
                 series: [
                     {
-                        name: "日K",
+                        name: "K",
                         type: "candlestick",
                         data: data0.values,
                         itemStyle: {
