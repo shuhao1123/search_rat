@@ -17,7 +17,7 @@ export default new Router({
             component: Header_Item
         },
         {
-            path: '/', //店铺警告
+            path: '/warn', //店铺警告
             name: 'zhaoshuhao',
             component: zhaoshuhao
         },
