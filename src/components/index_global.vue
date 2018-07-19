@@ -6,30 +6,34 @@
         <div class="ig">
             <ul>
                 <li v-for="(item,index) in ig" :key="index" @click="tab(index)" :class="{active:index==sy}" class="jt_bot">
-                    <p><img :src="item[item[3][0].status]"></p>{{item[0]}}
+                    <p><img :src="item[item[3][0].status]"></p>
+                    <span class="list_title">{{item[0]}}</span>
                     <span class="triangle_border_up"></span>
                 </li>
             </ul>
         </div>
         <div class="box row">
             <ul v-for="(item,index2) in ig_box" :key="index2" v-show="index2==sy">
-                <li v-for="(item_title,index1) in item" :key="index1" class="col-md-4 col-sm-6">
-                    <router-link :to="{path:'/ig_para',query:{id:item_title}}">
-                        <p>{{item_title.title}}</p>
-                        <p>{{item_title.content}}
-                            <span class="jt"></span>
-                        </p>
-                    </router-link>
+                <li v-for="(item_title,index1) in item" :key="index1" class="col-md-4 col-sm-6" @click="get(item_title.title)">
+                    <!-- <router-link :to="{path:'/ig_para',params:{id:item_title}}"> -->
+                    <p>{{item_title.title}}</p>
+                    <p>{{item_title.content}}
+                        <span class="jt"></span>
+                    </p>
+                    <!-- </router-link> -->
                 </li>
             </ul>
         </div>
-        <router-view></router-view>
         <index_center></index_center>
+        <router-view></router-view>
     </div>
 </template>
 <script>
-import index_center from "./index_center"
+import index_center from "./index_center";
 export default {
+    components: {
+        index_center
+    },
     data() {
         return {
             caption: "全球领先、安全、稳定的云计算产品",
@@ -313,6 +317,14 @@ export default {
                 .eq(index)
                 .find(".triangle_border_up")
                 .show();
+        },
+        get: function(id) {
+            this.$router.push({
+                path: "/ig_para",
+                query: {
+                    id: id
+                }
+            });
         }
     }
 };
@@ -320,6 +332,11 @@ export default {
 <style scoped>
 h4 {
     line-height: 40px;
+}
+.list_title {
+    overflow: hidden; /*超出部分隐藏*/
+    white-space: nowrap; /*不换行*/
+    text-overflow: ellipsis; /*超出部分文字以...显示*/
 }
 .ig_img {
     margin: 30px auto 15px;
@@ -438,8 +455,8 @@ h4 {
     }
 }
 a {
-   text-decoration: none;
-   color: #373d41
+    text-decoration: none;
+    color: #373d41;
 }
 </style>
 

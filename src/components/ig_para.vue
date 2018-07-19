@@ -1,5 +1,5 @@
 <template>
-    <div>{{para}}</div>
+    <div>{{this.$route.query.id}}</div>
 </template>
 <script>
 export default {
@@ -9,11 +9,11 @@ export default {
         };
     },
     created() {
-        this.para=this.$route.query.id
-        sessionStorage.setItem(para,this.para)
+        // this.para=
+
     },
     mounted(){
-
+        // sessionStorage.setItem("para",this.para)
     }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="ind_c">
         <h3>{{title}}</h3>
         <h4>{{abstract}}</h4>
     </div>
@@ -14,8 +14,11 @@ export default {
     }
 }
 </script>
-<style>
-
+<style scoped>
+.ind_c{
+    width: 100%;
+float: left;
+}
 </style>
 
 
