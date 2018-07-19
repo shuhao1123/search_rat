@@ -439,6 +439,7 @@ h4 {
 }
 .row {
     margin-left: 0;
+    margin-right: 0
 }
 @media (max-width: 992px) {
     .ig ul {
