@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div style="width:100%;background:#222">
-      <nav class="navbar navbar-inverse nav_top" role="navigation">
+    <div style="width:100%;background:#004182">
+      <nav class="navbar navbar-default nav_top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
@@ -10,9 +10,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-           <span @click="add_class('0')"><router-link to="/" class="navbar-brand" >搜索鼠</router-link></span>
+            <span @click="add_class('0')">
+              <router-link to="/" class="navbar-brand">搜索鼠</router-link>
+            </span>
           </div>
-          <div class="collapse navbar-collapse" id="example-navbar-collapse">
+          <div class="collapse navbar-collapse navbar-right " id="example-navbar-collapse">
             <ul class="nav navbar-nav">
               <li @click="add_class('1')" :class="{active:1==a_index}">
                 <router-link to="/warn">店铺预警</router-link>
@@ -70,6 +72,20 @@ export default {
         };
     },
     mounted() {
+        // window.onresize = function() {
+        //   console.log($(".navbar").width())
+        //     if ($(".navbar").width() < 750) {
+        //         $(".dropdown")
+        //             .siblings()
+        //             .click(function() {
+        //                 $(".navbar-toggle").click();
+        //             });
+        //         $(".dropdown li").click(function() {
+        //             $(".navbar-toggle").click();
+        //         });
+        //     }
+        // };
+
         // navbar 选品定价二级导航缓存
         $(".dropdown").click(function() {
             $(this)
@@ -110,6 +126,76 @@ export default {
 @media (max-width: 992px) {
     .nav_top {
         width: 100%;
+    }
+}
+/* navbar */
+.navbar-default {
+    background-color: #004182;
+    border-color: #004182;
+}
+
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #00c1de;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #00c1de;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #118df0;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #118df0;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #00c1de;
+    border-bottom-color: #00c1de;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #00c1de;
+    border-bottom-color: #00c1de;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #118df0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ccc;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #fff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #00c1de;
     }
 }
 </style>
