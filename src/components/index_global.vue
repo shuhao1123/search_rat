@@ -440,17 +440,20 @@ h4 {
 }
 .row {
     margin-left: 0;
-    margin-right: 0
+    margin-right: 0;
 }
 @media only screen and (max-width: 992px) {
     .ig ul {
-        width: 100%;
+        width: 95%;
     }
     .box ul {
-        width: 100%;
+        width: 95%;
     }
     .box ul li {
         height: 60px;
+    }
+    .box ul li p:nth-child(1) {
+        line-height: 30px;
     }
     .jt {
         top: -10px;
