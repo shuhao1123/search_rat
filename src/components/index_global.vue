@@ -4,17 +4,15 @@
         <h3>{{caption}}</h3>
         <h4>{{about}}</h4>
         <div class="ig">
-            <table>
-                <tr>
-                <td v-for="(item,index) in ig" :key="index" @click="tab(index)" :class="{active:index==sy}" class="jt_bot">
+            <ul>
+                <li v-for="(item,index) in ig" :key="index" @click="tab(index)" :class="{active:index==sy}" class="jt_bot">
                     <p><img :src="item[item[3][0].status]"></p>
                     <span class="list_title">{{item[0]}}</span>
                     <span class="triangle_border_up"></span>
-                </td>
-                </tr>
-            </table>
+                </li>
+            </ul>
         </div>
-        <div class="box">
+        <div class="box row">
             <ul v-for="(item,index2) in ig_box" :key="index2" v-show="index2==sy">
                 <li v-for="(item_title,index1) in item" :key="index1" class="col-md-4 col-sm-6" @click="get(item_title.title)">
                     <!-- <router-link :to="{path:'/ig_para',params:{id:item_title}}"> -->
