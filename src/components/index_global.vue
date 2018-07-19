@@ -442,10 +442,10 @@ h4 {
 }
 @media (max-width: 992px) {
     .ig ul {
-        width: 95%;
+        width: 100%;
     }
     .box ul {
-        width: 95%;
+        width: 100%;
     }
     .box ul li {
         height: 60px;
