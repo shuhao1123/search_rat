@@ -441,7 +441,7 @@ h4 {
     margin-left: 0;
     margin-right: 0
 }
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
     .ig ul {
         width: 100%;
     }
