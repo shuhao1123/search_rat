@@ -6,12 +6,18 @@ import Traffic_control from '@/components/Traffic_control'
 import echart from '@/components/echarts'
 import item_pricing from '@/components/item_pricing'
 import Locate from '@/components/Locate'
+import Index_Global from "@/components/index_global"
+import ig_para from "@/components/ig_para"
 
 Vue.use(Router)
 
 
 export default new Router({
-    routes: [{
+    routes: [
+        {
+            path:'/',
+            component:Index_Global//首页
+        },{
             path: '/navigation', //导航头
             name: 'Header_Item',
             component: Header_Item
@@ -36,6 +42,9 @@ export default new Router({
         },{
             path:'/Locate',//客群定位
             component:Locate
+        },{
+            path:'/ig_para',//首页传参数
+            component:ig_para
         }
     ]
 })

@@ -10,12 +10,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">搜索鼠</a>
+           <span @click="add_class('0')"><router-link to="/" class="navbar-brand" >搜索鼠</router-link></span>
           </div>
           <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
               <li @click="add_class('1')" :class="{active:1==a_index}">
-                <router-link to="/">店铺预警</router-link>
+                <router-link to="/warn">店铺预警</router-link>
               </li>
               <li @click="add_class('2')" :class="{active:2==a_index}">
                 <router-link to="/traffic_control">流量把控</router-link>
@@ -104,7 +104,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .nav_top {
-    width: 90%;
+    width: 80%;
     margin: auto;
 }
 @media (max-width: 992px) {

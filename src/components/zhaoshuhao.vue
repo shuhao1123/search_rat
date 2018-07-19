@@ -2,7 +2,7 @@
     <div>
         <!-- <div><img src="./../assets/ejd9qJo8XP.jpg" style="width:100%"></div> -->
 
-        <div style="width:95%;margin:20px auto">
+        <div style="width:80%;margin:20px auto">
             <div class="container-fluid">
                 <div class="row table table-bordered">
                     <div class="col-xs-6 col-md-3 col-sm-4 col-lg-2" v-for="(item,index) in data" :key="index" style="padding-top:10px">
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div style="width:95%;margin:20px auto;padding-right:30px">
+        <div style="width:80%;margin:20px auto;padding-right:30px">
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -79,6 +79,7 @@ export default {
         };
     }
 };
+
 </script>
 <style scoped>
 .row {
