@@ -24,10 +24,11 @@
             </ul>
         </div>
         <router-view></router-view>
+        <index_center></index_center>
     </div>
 </template>
 <script>
-import index_center from "./components/index_center"
+import index_center from "./index_center"
 export default {
     data() {
         return {
