@@ -1,5 +1,6 @@
 <template>
     <div id="index_global">
+        <swiper></swiper>
         <div class="ig_img"><img src="https://img.alicdn.com/tfs/TB1EGNRRVXXXXazXVXXXXXXXXXX-271-123.png"></div>
         <h3>{{caption}}</h3>
         <h4>{{about}}</h4>
@@ -30,9 +31,11 @@
 </template>
 <script>
 import index_center from "./index_center";
+import swiper from "./swiper";
 export default {
     components: {
-        index_center
+        index_center,
+        swiper
     },
     data() {
         return {

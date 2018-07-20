@@ -1,67 +1,67 @@
 <template>
-  <div>
-    <div style="width:100%;background:#004182">
-      <nav class="navbar navbar-default nav_top" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-              <span class="sr-only">切换导航</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <span @click="add_class('0')">
-              <router-link to="/" class="navbar-brand">搜索鼠</router-link>
-            </span>
-          </div>
-          <div class="collapse navbar-collapse navbar-right " id="example-navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li @click="add_class('1')" :class="{active:1==a_index}">
-                <router-link to="/warn">店铺预警</router-link>
-              </li>
-              <li @click="add_class('2')" :class="{active:2==a_index}">
-                <router-link to="/traffic_control">流量把控</router-link>
-              </li>
-              <li class="dropdown" :class="{active:3==a_index}">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  选品定价
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <router-link to="/item_pricing">单品定价</router-link>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">EJB</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">Jasper Report</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">分离的链接</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">另一个分离的链接</a>
-                  </li>
-                </ul>
-              </li>
-              <li @click="add_class('4')" :class="{active:4==a_index}">
-                <router-link to="/Locate">客群定位</router-link>
-              </li>
-              <li @click="add_class('5')" :class="{active:5==a_index}">
-                <router-link to="/echarts">搜索绩效</router-link>
-              </li>
-            </ul>
-          </div>
+    <div>
+        <div style="width:100%;background:#004182">
+            <nav class="navbar navbar-default nav_top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                            <span class="sr-only">切换导航</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span @click="add_class('0')">
+                            <router-link to="/" class="navbar-brand">搜索鼠</router-link>
+                        </span>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right " id="example-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li @click="add_class('1')" :class="{active:1==a_index}">
+                                <router-link to="/warn">店铺预警</router-link>
+                            </li>
+                            <li @click="add_class('2')" :class="{active:2==a_index}">
+                                <router-link to="/traffic_control">流量把控</router-link>
+                            </li>
+                            <li class="dropdown" :class="{active:3==a_index}">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    选品定价
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <router-link to="/item_pricing">单品定价</router-link>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">EJB</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">Jasper Report</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">分离的链接</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">另一个分离的链接</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li @click="add_class('4')" :class="{active:4==a_index}">
+                                <router-link to="/Locate">客群定位</router-link>
+                            </li>
+                            <li @click="add_class('5')" :class="{active:5==a_index}">
+                                <router-link to="/echarts">搜索绩效</router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </nav>
+        <router-view></router-view>
     </div>
-    <router-view></router-view>
-  </div>
 </template>
 
 <script>
@@ -98,6 +98,11 @@ export default {
             .find("ul li")
             .click(function() {
                 $(".dropdown").addClass("active");
+
+                //移动端li 点击消失
+                if ($("#example-navbar-collapse").hasClass("in")) {
+                    $(".navbar-toggle").click();
+                }
             });
         $(".dropdown")
             .siblings()
@@ -106,7 +111,20 @@ export default {
                     .addClass("active")
                     .siblings()
                     .removeClass("active");
+
+                //移动端li 点击消失
+                if ($("#example-navbar-collapse").hasClass("in")) {
+                    $(".navbar-toggle").click();
+                }
             });
+        if ($("#example-navbar-collapse").hasClass("in")) {
+            console.log(33);
+            $(".dropdown")
+                .siblings()
+                .click(function() {
+                    $(".navbar-toggle").click();
+                });
+        }
         this.a_index = sessionStorage.getItem("key");
     },
     methods: {
