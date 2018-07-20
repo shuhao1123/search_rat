@@ -15,8 +15,8 @@ export default {
         return {
             src1: [
                 require("./../assets/496efd5414ce543a6bf12d4cf83532c6.jpg"),
-                require("./../assets/3892c1eeb3dd03fba4af09b136690a6e.jpg"),
-                require("./../assets/5e2aa29d1e9b9bd1d610b49560921202.jpg")
+                require("./../assets/40a6232c9b4e3ddd72afe18ea11f9a12.jpg"),
+                require("./../assets/9dd6736bb90966289613b9ec85a47853.jpg")
             ]
         };
     },
