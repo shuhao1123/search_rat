@@ -262,6 +262,9 @@ export default {
     .bot ul li{
         width: 100%;
     }
+    .row{
+        width: 95%;
+    }
 }
 </style>
 
