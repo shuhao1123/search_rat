@@ -32,7 +32,7 @@
 </template>
 <script>
 import index_center from "./index_center";
-import index_bottom from "./index_bottom"
+import index_bottom from "./index_bottom";
 import swiper from "./swiper";
 export default {
     components: {
@@ -463,6 +463,13 @@ h4 {
     }
     .jt {
         top: -10px;
+    }
+    .box ul li:active {
+        background: #fff;
+        box-shadow: 2px 2px 8px #ccc;
+    }
+    .box ul li:active .jt {
+        display: block;
     }
 }
 a {
