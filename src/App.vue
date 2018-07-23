@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <header-nav></header-nav>
+    <div style="width:100%;height:auto;" id="main">
+      <header-nav></header-nav>
+    </div>
     <!-- <router-view/> -->
     <div class="bot">
       <ul>
@@ -18,6 +20,11 @@ import Header_Item from "./components/Header_Item";
 export default {
     components: {
         "header-nav": Header_Item
+    },
+    mounted() {
+      var hei=window.innerHeight-100+'px'
+      console.log(window.innerHeight)
+      $('#main').css("min-height",hei)
     }
 };
 </script>
