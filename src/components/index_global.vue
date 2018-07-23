@@ -26,16 +26,19 @@
             </ul>
         </div>
         <index_center></index_center>
+        <index_bottom></index_bottom>
         <router-view></router-view>
     </div>
 </template>
 <script>
 import index_center from "./index_center";
+import index_bottom from "./index_bottom"
 import swiper from "./swiper";
 export default {
     components: {
         index_center,
-        swiper
+        swiper,
+        index_bottom
     },
     data() {
         return {
