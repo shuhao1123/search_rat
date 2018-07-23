@@ -22,9 +22,14 @@ export default {
         "header-nav": Header_Item
     },
     mounted() {
-      var hei=window.innerHeight-100+'px'
-      console.log(window.innerHeight)
-      $('#main').css("min-height",hei)
+        var hei = window.innerHeight - 80 + "px";
+        $("#main").css("min-height", hei);
+        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            //移动端
+            //TODO
+            var hei1 = window.screen.availHeight  - 80 + "px";
+            $("#main").css("min-height", hei1);
+        }
     }
 };
 </script>
