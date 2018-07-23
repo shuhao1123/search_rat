@@ -27,7 +27,7 @@ export default {
         if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
             //移动端
             //TODO
-            var hei1 = window.screen.availHeight  - 80 + "px";
+            var hei1 = window.screen.availHeight  - 80-64 + "px";
             $("#main").css("min-height", hei1);
         }
     }
