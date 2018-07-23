@@ -434,6 +434,15 @@ h4 {
 .jt_bot:nth-child(1) .triangle_border_up {
     display: block;
 }
+
+.active {
+    color: #00c1de;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+@media only screen and (min-width: 768px){
 .box ul li:hover {
     background: #fff;
     box-shadow: 2px 2px 8px #ccc;
@@ -441,12 +450,6 @@ h4 {
 .box ul li:hover .jt {
     display: block;
 }
-.active {
-    color: #00c1de;
-}
-.row {
-    margin-left: 0;
-    margin-right: 0;
 }
 @media only screen and (max-width: 992px) {
     .ig ul {
