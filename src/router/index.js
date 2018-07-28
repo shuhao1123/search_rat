@@ -11,13 +11,11 @@ import ig_para from "@/components/ig_para"
 
 Vue.use(Router)
 
-
 export default new Router({
-    routes: [
-        {
-            path:'/',
-            component:Index_Global//首页
-        },{
+    routes: [{
+            path: '/',
+            component: Index_Global //首页
+        }, {
             path: '/navigation', //导航头
             name: 'Header_Item',
             component: Header_Item
@@ -33,18 +31,18 @@ export default new Router({
             component: Traffic_control
         },
         {
-            path:'/echarts', //搜索绩效
-            name:'echarts',
-            component:echart
-        },{
-            path:'/item_pricing',//选品定价 > 单品定价
-            component:item_pricing
-        },{
-            path:'/Locate',//客群定位
-            component:Locate
-        },{
-            path:'/ig_para',//首页传参数
-            component:ig_para
+            path: '/echarts', //搜索绩效
+            name: 'echarts',
+            component: echart
+        }, {
+            path: '/item_pricing', //选品定价 > 单品定价
+            component: item_pricing
+        }, {
+            path: '/Locate', //客群定位
+            component: Locate
+        }, {
+            path: '/ig_para', //首页传参数
+            component: ig_para
         }
     ]
 })

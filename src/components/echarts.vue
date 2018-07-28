@@ -128,20 +128,20 @@ clearInterval(this.timer2)
                         show: false
                     }
                 },
-                // dataZoom: [
-                //     {
-                //         type: "inside",
-                //         start: 50,
-                //         end: 100
-                //     },
-                //     {
-                //         show: true,
-                //         type: "slider",
-                //         y: "90%",
-                //         start: 50,
-                //         end: 100
-                //     }
-                // ],
+                 dataZoom: [
+                     {
+                         type: "inside",
+                          startValue: data0[0],
+    endValue: data0[data0.length-1],
+                     },
+                     {
+                         show: true,
+                         type: "slider",
+                         y: "90%",
+                          startValue: data0[0],
+    endValue: data0[data0.length-1],
+                     }
+                 ],
                 series: [
                     {
                         name: "K",
@@ -281,6 +281,16 @@ clearInterval(this.timer2)
             window.onresize = function() {
                 myChart.resize();
             };
+  //          myChart.on('datazoom',function(params){
+
+//var opt = myChart.getOption();
+//var dz = opt.dataZoom[0];
+//var tstart = opt.xAxis[0].data[dz.startValue];
+//var tend = opt.xAxis[0].data[dz.endValue];
+//console.log(tstart)
+//});
+
+
         }
     }
 };
